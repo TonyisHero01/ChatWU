@@ -26,7 +26,7 @@ public class ChatPage implements ClientMessageEventListener, Serializable {
     DefaultListModel<String> listModel = new DefaultListModel<>();  // save friend list
     JList<String> friendsList = new JList<>(listModel);  // show friend list
 
-    JTextArea chatArea = new JTextArea();  // 聊天区域
+    JTextArea chatArea = new JTextArea();
     JTextField messageField = new JTextField(20);
     JButton sendButton = new JButton("Send");
 
@@ -120,7 +120,7 @@ public class ChatPage implements ClientMessageEventListener, Serializable {
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
 
-        messageField.setMaximumSize(new Dimension(Integer.MAX_VALUE, messageField.getPreferredSize().height));  // 设定发送消息区域大小
+        messageField.setMaximumSize(new Dimension(Integer.MAX_VALUE, messageField.getPreferredSize().height));
         inputPanel.add(messageField);
         inputPanel.add(sendButton);
 

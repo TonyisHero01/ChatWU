@@ -22,7 +22,7 @@ public class ChatClientImpl  extends UnicastRemoteObject implements ChatClient {
     // server sends message to client via this method, gives also sender name
     @Override
     public void retrieveMessage(String from, String message) throws RemoteException {
-        System.out.println(clientName+"发送了");
+        System.out.println(clientName+" sent");
         //send message to page listener
         clientMessageEventListener.onMessageReceived(from, message);
     }
@@ -39,7 +39,7 @@ public class ChatClientImpl  extends UnicastRemoteObject implements ChatClient {
 
     }
 
-    public ClientMessageEventListener getCilentMessageEventListener() {
+    public ClientMessageEventListener getClientMessageEventListener() {
         return clientMessageEventListener;
     }
 

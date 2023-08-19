@@ -42,7 +42,7 @@ public class DatabaseService {
         System.out.println(userDto.getPassword());
         String sql = "INSERT INTO t_user (NAME, PASSWORD) VALUES (?, ?)";
 
-        try (Connection conn = getDBConnection(); // 获取数据库连接
+        try (Connection conn = getDBConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, userDto.getName());
             pstmt.setString(2, userDto.getPassword());
@@ -59,7 +59,7 @@ public class DatabaseService {
              ResultSet rs = pstmt.executeQuery()) {
             List<UserDto> userList = new ArrayList<>(); // create an array list for saving results of searching
             while (rs.next()) { // iterate results
-                UserDto user = new UserDto(); // 创建一个 Map，用于存放单个用户的信息 save information of one user
+                UserDto user = new UserDto(); // save information of one user
                 user.setName(rs.getString("NAME")); // get NAME from result and save in user
                 user.setPassword(rs.getString("PASSWORD")); // get PASSWORD from result and save in user
                 userList.add(user); // add this user info to the userList

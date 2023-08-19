@@ -38,7 +38,7 @@ public class ChatServerImpl extends UnicastRemoteObject implements ChatServer, S
             if(name.equals(from)){
                 continue;
             }
-            clients.get(name).retrieveMessage("公共聊天室", from+":"+message);
+            clients.get(name).retrieveMessage("Public Channel", from+":"+message);
         }
     }
 
